@@ -2,7 +2,7 @@
 
 A little desktop alarm clock
 
-![Two alarms are set, they are red because they are imminent](https://github.com/radiac/clocky/raw/master/screenshot.png)
+![Two alarms are set, they are red because they are imminent](https://raw.githubusercontent.com/radiac/clocky/refs/heads/main/screenshot.png)
 
 
 ## Development
