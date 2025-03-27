@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'DSEG7 Modern Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/DSEG7Modern-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans'), url('/assets/OpenSans-Regular.woff2') format('woff2');
+}
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+
+  color: #0f0f0f;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.clock,
+.timers {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.timers {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.clock {
+  background-color: #f0f0f0;
+
+  & h1 {
+    display: block;
+    font-size: 2.5rem;
+    font-family: 'DSEG7 Modern Regular';
+    width: 5ch;
+    padding: 10px;
+  }
+}
+
+.timer {
+  display: flex;
+  flex: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: calc(100vh - 20px);
+  min-height: 6rem;
+  max-height: 7rem;
+  text-align: center;
+  border: 1px solid #888;
+  border-radius: 10px;
+  padding: 0.2rem;
+  margin: 0 0 0 10px;
+  background-color: rgb(255, calc(var(--progress) * 255), calc(var(--progress) * 255));
+
+  & h2,
+  & input[name="title"] {
+    font-weight: normal;
+    font-size: 0.9rem;
+    font-family: inherit;
+  }
+
+  & time,
+  & input[name="when"] {
+    display: block;
+    font-size: 2.5rem;
+  }
+
+  & time+p,
+  & button[name="save"] {
+    font-size: 0.75rem;
+  }
+
+  & time,
+  & time+p,
+  & input[name="when"],
+  & input[name="when"],
+  & button[name="save"] {
+    font-family: 'DSEG7 Modern Regular';
+  }
+
+  & input[name="title"],
+  & input[name="when"],
+  & button {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: transparent;
+
+    &::placeholder {
+      color: #0f0f0f;
+      opacity: 0.3;
+    }
+  }
+
+  & button[name="save"]:hover {
+    background: #00cc00;
+    cursor: pointer;
+  }
+
+  & button[name="close"] {
+    position: absolute;
+    text-align: left;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    width: 1.5ch;
+    height: 1.5ch;
+    color: #444;
+
+    &:hover {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+
+  & h2,
+  & time,
+  & p,
+  & button,
+  & input {
+    margin: 0;
+    padding: 0.2rem 0;
+    line-height: 1;
+  }
+
+  &.editor {
+    transition: width 0.25s ease, border-color 0.25s ease;
+
+    &:not(.open, :focus-within, :hover) {
+      width: 1rem;
+      border: transparent;
+      transition: width 0.25s ease, border-color 0.25s ease;
+
+      &::before {
+        content: "+";
+      }
+
+      &>* {
+        display: none;
+      }
+    }
+  }
+}
+
+.stopwatch {
+  background: white;
+
+  & time {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Clocky</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="main.js" defer></script>
+</head>
+<body>
+
+  <div class="clock">
+    <h1>??:??</h1>
+  </div>
+
+  <div class="timers">
+    <template name="timer">
+      <div class="timer">
+        <h2>Title</h2>
+        <time>10:33</time>
+        <p>01:02:31</p>
+        <button name="close">x</button>
+      </div>
+    </template>
+
+    <div class="timer editor">
+      <input type="text" name="title" maxlength="20" placeholder="Title">
+      <input type="text" name="when" maxlength="6" placeholder="00:00">
+      <button name="save">add</button>
+    </div>
+  </div>
+
+</body>
+</html>
+

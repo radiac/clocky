@@ -1,0 +1,10 @@
+# Build output
+dist/
+target/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
